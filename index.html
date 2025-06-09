@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Meu App</h1>
+    <p>Esse é o meu PWA</p> 
+    <script>
+        if("serviceworker" in navigator){
+            navigator.serviceWorker.register("sw.js")
+            .then(()=>console.log("Service Worker resgistrado com sucesso"))
+            .catch(err => console.error("Erro ao registrar Service Worker: " + err));
+        } else {
+            console.log("Service Worker não suportado");
+        }
+    </script>   
+</body>
+</html>
